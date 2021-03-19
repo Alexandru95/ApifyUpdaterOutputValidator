@@ -143,10 +143,8 @@ namespace ValidApifyUpp
             var sqlManager = new SqlServerAccessManager();
 
             sqlManager.Connect();
-            var scriptRP = $@"select Address,IDs from RetailerProductInfo RPI where RPI.RetailerId ='{_retailerId}'
-                              AND (RPI.Deleted = 0 or RPI.Deleted IS NULL)
-                              AND (RPI.LinkIsValid = 1 OR RPI.LinkIsValid IS NULL)
-                              AND RPI.Address in ({adressesString})";
+            //Place data Query here --> replace with correct querry
+            var scriptRP = $@"place query here";
             var rpi = sqlManager.ExecuteSQL(scriptRP).ToList();
             foreach (var item in rpi)
             {
